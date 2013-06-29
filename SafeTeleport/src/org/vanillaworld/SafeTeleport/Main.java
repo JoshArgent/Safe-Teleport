@@ -30,6 +30,9 @@ public class Main extends JavaPlugin implements Listener {
 		{
 			// Teleport has not been made safe
 			// Perform safe guards..
+			event.setCancelled(true);
+			SafeTeleport.safeTeleport(p, event.getTo());
+			setNormalTeleport(p, true);
 		}
 	}
 	
@@ -47,6 +50,5 @@ public class Main extends JavaPlugin implements Listener {
 	{
 		p.setMetadata("safeteleport", new FixedMetadataValue(this, value));
 	}
-	
 
 }
